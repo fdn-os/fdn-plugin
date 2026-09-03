@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundational Dashboard</title>
+    <!-- resolve the theme (localStorage "gb-theme" → system preference) BEFORE React mounts,
+         then paint the matching background immediately — no flash in either theme -->
+    <link rel="icon" type="image/png" id="fdn-favicon" />
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem("gb-theme"); } catch (e) {}
+        if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = t;
+        // Theme-aware favicon (Grain mark) — set pre-paint, kept in sync by useTheme.
+        var FAV = { light: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAbmVYSWZNTQAqAAAACAADARIAAwAAAAEAAQAAATEAAgAAABEAAAAyh2kABAAAAAEAAABEAAAAAEFkb2JlIEltYWdlUmVhZHkAAAADoAEAAwAAAAEAAQAAoAIABAAAAAEAAAAgoAMABAAAAAEAAAAgAAAAABNcar8AAAKkaVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJYTVAgQ29yZSA2LjAuMCI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOmV4aWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vZXhpZi8xLjAvIgogICAgICAgICAgICB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iCiAgICAgICAgICAgIHhtbG5zOnRpZmY9Imh0dHA6Ly9ucy5hZG9iZS5jb20vdGlmZi8xLjAvIj4KICAgICAgICAgPGV4aWY6UGl4ZWxZRGltZW5zaW9uPjE1MjwvZXhpZjpQaXhlbFlEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWERpbWVuc2lvbj4xNTI8L2V4aWY6UGl4ZWxYRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpDb2xvclNwYWNlPjE8L2V4aWY6Q29sb3JTcGFjZT4KICAgICAgICAgPHhtcDpDcmVhdG9yVG9vbD5BZG9iZSBJbWFnZVJlYWR5PC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgoxrKtbAAADw0lEQVRYCeVXPWgUQRSeub39uTMBETWKoJBCxCqKaYOJkUQsFJIgiK0WUQhRDBaKUQuNIgZE0EZNEUW00FSihQHFzqBY+JeICP4FNEVI7nbvdsdv4s7d7N7MXhJsxIHhzXvve2/evpn35o6Q/30YugSkHaeZplKNzPc/A+PpcFXkVtq2W6lhNMDPmyrYqDptWX0wZpjvEMxJx3HWRREJXG3tctO2e2D7gvswLOtGAlqtgoPeMAAeBJ+TkB1So8tSy7I6gJuQbQ3bvlpGRFepKJvIrWCEXIbjAR0KG3cHlN4Brl6Hicu1AcDRZBwc8n2m4+yP63BMrdh4EHLtvYrbcF4bgBEEY9C7KiPG2BmSza6WdBnC2AXwpiSb11IbgOd57+HhucZLnen7XUKHM27GukHwC6HaAODExzyHGagcIt3tQk4JaRPrhdKkAEjRdR8RSnkQqlEPoR0qNqgAkgwxqkdiANykmM+fQBAVNx8Z4JunQ7dOSJUEu08rFRBWDQCYAEEcw8XbjYsm3wnZFvHoB6X0tU4rO4lg0FC6UFqniG2v5wrf8x4UPa8J2dhGGRvC/AGxNrWSs+kCIaMSP78lGs7RsJtNg95FMC0xy2Xg52oe+tEQK7pmiaJCrsXsIqw2A/i0YoisAe1E+h+j013BOhvKf4HyStEO+Bj3DaNfC4BCG4DCKIWD7saXDkGXeOm4LTb/RIKgi8zOflP4KokWEoAw6sRxHBeMgvILOQLH2wuFwkuFPiJaTAAEx9Fjh5dzzhtjDi7nFG77MGgL+scu13XH53SZzFrTNDdHdpWYxQVASI1P6d7QD8Wm/WgImwr5/D6U7CiXI0tN+B1wPc3YGB62gyG2gohGUqFAHnGMCYOxrdByDMMXPxQ3FuW7ERueR5Z2ICMpUKCoUFc41AYAzx4/TN2Abg10/DLmBIaXasDYLfB1QhZS5avKddojwAv0MeYkzvIeULLHl/P34DZmfHMOmogbC77kQAgE9dPpMaTup+CrUANpv4h0r1TgiijHpwr5nEgbAJmZ+Y7+f19nKMvNTKYRfLssk9bPUI6vJD6y1AcAGNrcALIwFbFQMAh0J8QqX0XYn/7jSmGoMSojXfcD9f3DECTdR94XtpSNpBVjZ1GWTyRJxVIVdQSE9N1ERRyBUFtK0In3QbYdxOvZLwtU66oBcKOC615CmjuxfCs5kX/9yn6+ov4PoDf0AotiSh7JzabSdilexD04jw6ostikDXQG/6Lu4axX4ShGTMMYzuVyXypN/75kCVyKD+Drf3P8BrJLD8ruZ8IVAAAAAElFTkSuQmCC", dark: "data:image/png;base64,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" };
+        window.__gbFavicon = FAV;
+        var link = document.getElementById("fdn-favicon");
+        if (link) link.href = FAV[t] || FAV.light;
+      })();
+    </script>
+    <style>
+      html, body { background: #FFFCF7; }
+      html[data-theme="dark"], html[data-theme="dark"] body { background: oklch(0.208 0.011 261); }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

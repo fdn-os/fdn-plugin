@@ -1,0 +1,34 @@
+{
+  "id": "automation",
+  "name": "Automation Stack",
+  "projectType": "automation",
+  "spec": {
+    "template": "automation",
+    "styleGuide": "fdn-brand",
+    "ui": {
+      "framework": "react@19",
+      "router": "@tanstack/react-router",
+      "data": "@tanstack/react-query",
+      "styling": "stylex"
+    },
+    "build": {
+      "bundler": "vite@7",
+      "output": "dist (static) + _worker.js",
+      "worker": "esbuild"
+    },
+    "backend": {
+      "db": "neon (env.DATABASE_URL)",
+      "storage": "r2 — env.APP_BUCKET, opt-in via provision_storage (the platform's BUNDLES bucket is separate and never app-writable)",
+      "kv": "env.APP_KV, opt-in via provision_kv (cache semantics: eventually consistent, no compare-and-set, 60s min TTL)",
+      "cron": "governor-driven, opt-in via provision_cron — POST /api/cron/<job> authenticated with env.FDN_CRON_SECRET; tenants have no Cron Trigger of their own",
+      "realtime": "opt-in via provision_realtime — env.FDN_REALTIME_KEY/_URL for server-published WebSocket fan-out; there is no database-change feed",
+      "ai": "opt-in via provision_ai — env.FDN_AI_KEY/_URL, spend-capped",
+      "unavailable": "no Durable Object binding, no Node runtime, no Chromium"
+    },
+    "runtime": {
+      "trigger": "HTTP (POST /api/run)",
+      "scheduling": "external scheduler → POST /api/run (tenant cron not exposed)"
+    },
+    "notes": "Worker-centric task runner with a minimal status UI. Best for jobs, webhooks, integrations, ETL."
+  }
+}

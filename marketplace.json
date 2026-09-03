@@ -1,0 +1,14 @@
+{
+  "name": "foundational",
+  "owner": {
+    "name": "Foundational",
+    "url": "https://github.com/fdn-os"
+  },
+  "plugins": [
+    {
+      "name": "fdn",
+      "source": "./",
+      "description": "Foundational builders chain. Surfaces as /fdn:<skill>. Connects Hub MCP at https://hub.foundational.builders/mcp."
+    }
+  ]
+}

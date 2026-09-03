@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Hub": {
+      "type": "http",
+      "url": "https://hub.fdnl.work/mcp"
+    }
+  }
+}

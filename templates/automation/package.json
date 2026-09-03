@@ -1,0 +1,35 @@
+{
+  "name": "gb-template-automation",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Foundational builders automation boilerplate — worker-centric task runner (Neon-backed) with a minimal StyleX status UI. Cloned by /fdn:build for project type 'automation'.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run build:worker",
+    "build:worker": "esbuild worker/index.ts --bundle --format=esm --platform=neutral --target=es2022 --outfile=dist/_worker.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.1.0",
+    "@tanstack/react-query": "^5.101.4",
+    "@tanstack/react-router": "^1.170.18",
+    "framer-motion": "^12.42.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-typescript": "^7.26.0",
+    "@cloudflare/workers-types": "^4.20260702.1",
+    "@stylexjs/babel-plugin": "^0.19.0",
+    "@stylexjs/postcss-plugin": "^0.19.0",
+    "@stylexjs/stylex": "^0.19.0",
+    "@types/node": "^22.10.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "esbuild": "^0.28.1",
+    "typescript": "^5.7.2",
+    "vite": "^7.1.0"
+  }
+}

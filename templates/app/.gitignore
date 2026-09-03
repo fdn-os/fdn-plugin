@@ -1,0 +1,7 @@
+# A template is cloned into a builder's project and pushed to GitHub (push-builds),
+# so it must carry its own ignores — build output and deps never belong in the repo.
+node_modules/
+dist/
+.wrangler/
+.dev.vars
+*.local

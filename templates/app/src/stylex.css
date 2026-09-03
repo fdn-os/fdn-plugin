@@ -1,0 +1,32 @@
+/* The @stylex directive is replaced with the compiled atomic CSS by @stylexjs/postcss-plugin. */
+@stylex;
+
+/* No @font-face here on purpose. The type stack is the system UI stack, declared ONCE as
+   `fontSans` / `fontDisplay` in src/tokens.stylex.ts. A self-hosted .woff2 would make the template a
+   binary tree (and `commit_source` is UTF-8 text only); a Google Fonts <link> would put a
+   third-party request on every tenant app's critical path, with the CSP + privacy cost that carries.
+   A style guide that wants a real display face must load it itself. */
+
+/* Minimal reset — everything else is StyleX (component-scoped). */
+* {
+  box-sizing: border-box;
+}
+/* Native UI (form controls, scrollbars) follows the toggled theme; html[data-theme]
+   is set pre-mount by the index.html inline script and kept in sync by useTheme. */
+:root {
+  color-scheme: light;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a {
+  color: inherit;
+}

@@ -1,0 +1,41 @@
+{
+  "name": "fdn",
+  "version": "0.1.0",
+  "description": "Foundational builders chain \u2014 ideate, build, deploy, and related Builder skills. Surfaces as /fdn:<skill>.",
+  "author": {
+    "name": "Foundational",
+    "url": "https://github.com/fdn-os"
+  },
+  "homepage": "https://hub.foundational.builders",
+  "mcpServers": {
+    "foundational": {
+      "type": "http",
+      "url": "https://hub.foundational.builders/mcp"
+    }
+  },
+  "skills": [
+    "./skills/build",
+    "./skills/debug",
+    "./skills/deploy",
+    "./skills/escalate-db",
+    "./skills/fdn-builders-context",
+    "./skills/grill-me",
+    "./skills/grill-with-docs",
+    "./skills/grilling",
+    "./skills/harden",
+    "./skills/ideate",
+    "./skills/list",
+    "./skills/load",
+    "./skills/migrate",
+    "./skills/plan",
+    "./skills/plant-pointers",
+    "./skills/project",
+    "./skills/save",
+    "./skills/wait-what"
+  ],
+  "agents": [
+    "./agents/fdn-build-resolver.md",
+    "./agents/fdn-deploy-verifier.md",
+    "./agents/fdn-ui-specialist.md"
+  ]
+}

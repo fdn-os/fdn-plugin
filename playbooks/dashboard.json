@@ -1,0 +1,31 @@
+{
+  "id": "dashboard",
+  "name": "Dashboard Stack",
+  "projectType": "dashboard",
+  "spec": {
+    "template": "dashboard",
+    "styleGuide": "grain-dashboards",
+    "ui": {
+      "framework": "react@19",
+      "router": "@tanstack/react-router",
+      "data": "@tanstack/react-query",
+      "styling": "stylex",
+      "dataviz": "StyleX SVG (dependency-free); add visx/recharts if needed"
+    },
+    "build": {
+      "bundler": "vite@7",
+      "output": "dist (static) + _worker.js",
+      "worker": "esbuild"
+    },
+    "backend": {
+      "db": "neon (env.DATABASE_URL)",
+      "storage": "r2 — env.APP_BUCKET, opt-in via provision_storage (the platform's BUNDLES bucket is separate and never app-writable)",
+      "kv": "env.APP_KV, opt-in via provision_kv (cache semantics: eventually consistent, no compare-and-set, 60s min TTL)",
+      "cron": "governor-driven, opt-in via provision_cron — POST /api/cron/<job> authenticated with env.FDN_CRON_SECRET; tenants have no Cron Trigger of their own",
+      "realtime": "opt-in via provision_realtime — env.FDN_REALTIME_KEY/_URL for server-published WebSocket fan-out; there is no database-change feed",
+      "ai": "opt-in via provision_ai — env.FDN_AI_KEY/_URL, spend-capped",
+      "unavailable": "no Durable Object binding, no Node runtime, no Chromium"
+    },
+    "notes": "Bento metric grid + charts. Denser type scale and tighter radii (grain-dashboards guide). Best for analytics, admin, internal tools."
+  }
+}
