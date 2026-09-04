@@ -1,7 +1,7 @@
 {
   "mcpServers": {
     "foundational": {
-      "type": "http",
+      "type": "streamable-http",
       "url": "https://hub.foundational.builders/mcp"
     }
   }

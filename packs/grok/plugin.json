@@ -6,5 +6,11 @@
     "name": "Foundational",
     "url": "https://github.com/fdn-os"
   },
-  "homepage": "https://hub.fdnl.work"
+  "homepage": "https://hub.foundational.builders",
+  "mcpServers": {
+    "foundational": {
+      "type": "http",
+      "url": "https://hub.foundational.builders/mcp"
+    }
+  }
 }

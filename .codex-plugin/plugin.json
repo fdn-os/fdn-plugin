@@ -1,0 +1,10 @@
+{
+  "name": "fdn",
+  "version": "0.1.0",
+  "description": "Foundational builders chain — ideate, build, deploy. Surfaces as /fdn:<skill>.",
+  "author": {
+    "name": "Foundational",
+    "url": "https://github.com/fdn-os"
+  },
+  "homepage": "https://hub.foundational.builders"
+}
