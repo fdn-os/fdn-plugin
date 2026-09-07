@@ -14,11 +14,19 @@ Source lives in Cloudflare **Artifacts** (`artifacts://fdn-source/<repo>`). Org 
 
 ## Hub MCP
 
-Agents add **one** MCP URL: `https://hub.foundational.builders/mcp`.
+Agents add **one** MCP URL: `https://hub.foundational-os.com/mcp`.
 
-`https://os.foundational.builders` is the web console. There is no second public MCP.
+`https://console.foundational-os.com` is the web console. There is no second public MCP.
 
-A **Sub-MCP** is a sub-catalogue: a named, origin-bound subset of one Builder's already-connected tools. It can only shrink access. URL: `https://hub.foundational.builders/mcp/sub/<id>`.
+A **Sub-MCP** is a sub-catalogue: a named, origin-bound subset of one Builder's already-connected tools. It can only shrink access. URL: `https://hub.foundational-os.com/mcp/sub/<id>`.
+
+## Builder Agent Drive
+
+This Computer's Drive identity is a Google service account. `$GOOGLE_APPLICATION_CREDENTIALS` is `/etc/fdn/gcp-sa.json` or `~/.fdn/gcp-sa.json`. The email to share with is `~/.fdn/gcp-sa.email` — do not open the JSON to learn it. **Never print `private_key` or the access token.**
+
+To list or read, run this plugin's `scripts/gdrive.py`: `list`, `ls <folderId>`, `get <fileId>`. Do not install a Google client. Do not search for `googleapis`.
+
+This identity has empty My Drive. Shared folders appear as `sharedWithMe`; folder contents are `'<id>' in parents`.
 
 ## T1 — no tokens to the model
 
