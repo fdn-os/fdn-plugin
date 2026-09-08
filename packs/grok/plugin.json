@@ -1,6 +1,6 @@
 {
   "name": "fdn",
-  "version": "0.2.0",
+  "version": "0.0.1",
   "description": "Foundational builders chain \u2014 ideate, build, deploy, and related Builder skills. Surfaces as /fdn:<skill>.",
   "author": {
     "name": "Foundational",

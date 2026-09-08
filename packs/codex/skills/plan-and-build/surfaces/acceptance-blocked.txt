@@ -1,0 +1,23 @@
+════════════════════════════════════════════════════════════════
+                       ACCEPTANCE BLOCKED
+════════════════════════════════════════════════════════════════
+
+The loop could not resolve this. Independent accept checked it against what you approved.
+
+**What blocked:** {primary journey | checklist | safety} — {one line}
+
+**Checks:** {N} of {M} passed.
+
+**Must fix:**
+
+- {one line}
+
+- {one line}
+
+**Where it ran:** {environment}
+
+**Parked:** {M | omit this line if none}
+
+This is a stop.
+
+════════════════════════════════════════════════════════════════

@@ -1,0 +1,16 @@
+════════════════════════════════════════════════════════════════
+                            SHIPPED
+════════════════════════════════════════════════════════════════
+
+{artifact} is built.
+
+**Built:** {one line}
+
+**Acceptance:** The main journey works. All checks passed.
+
+**Parked:**
+- {one per line, omit the section if none}
+
+**Records:** {path}
+
+════════════════════════════════════════════════════════════════

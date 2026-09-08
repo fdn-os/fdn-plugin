@@ -1,0 +1,19 @@
+════════════════════════════════════════════════════════════════
+                       ACCEPTANCE PASSED
+════════════════════════════════════════════════════════════════
+
+The Build loop is green. Independent accept passed.
+
+**Build loop:** green
+
+**Independent accept:** passed
+
+**Main journey:** {It works. | Not the reason this passed.}
+
+**Checks:** All {N} passed.
+
+**Where it ran:** {environment}
+
+**Parked:** {M | omit this line if none}
+
+════════════════════════════════════════════════════════════════

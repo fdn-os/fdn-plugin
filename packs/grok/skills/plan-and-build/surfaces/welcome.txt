@@ -1,0 +1,15 @@
+════════════════════════════════════════════════════════════════
+                      PLAN-AND-BUILD {version}
+════════════════════════════════════════════════════════════════
+
+A universal builder for any artifact (a skill, code, a document, or a design). Use this skill to build a new artifact or to update an existing one. Designed for non-technical users, built via a guided process through these three stages:
+
+● 1. Align — Guided interview to align on the scope and outcomes of this build run
+
+○ 2. Plan — Generation of detailed build plan based on the aligned scope and outcomes
+
+○ 3. Build — Autonomous building and testing
+
+Alignment starts here.
+
+════════════════════════════════════════════════════════════════

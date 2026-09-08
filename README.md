@@ -7,8 +7,7 @@ Hub: `https://hub.foundational.builders/mcp`
 ```
 /fdn:project   anchor the session
 /fdn:ideate    create the Project + spec
-/fdn:plan      one-page plan
-/fdn:build     implement
+/plan-and-build  align, plan, and build (v0.0.1)
 /fdn:deploy    ship, always print the URL
 /fdn:harden    close-out before a live promote
 ```
