@@ -1,0 +1,15 @@
+════════════════════════════════════════════════════════════════
+                         {ALIGN | PLAN | BUILD}
+════════════════════════════════════════════════════════════════
+
+{one sentence: what just finished}
+
+{✓|●|○} 1. Align — Guided interview to align on the scope and outcomes of this build run
+
+{✓|●|○} 2. Plan — Generation of detailed build plan based on the aligned scope and outcomes
+
+{✓|●|○} 3. Build — Autonomous building and testing
+
+{one sentence: what comes first now}
+
+════════════════════════════════════════════════════════════════

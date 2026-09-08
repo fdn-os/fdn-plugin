@@ -1,0 +1,25 @@
+════════════════════════════════════════════════════════════════
+   THE ALIGNED SCOPE AND OUTCOMES — DOES THIS LOOK RIGHT?
+════════════════════════════════════════════════════════════════
+
+The aligned scope and outcomes of this run are ready. Approve it to start the plan.
+
+**Goal of this build run:** {one short sentence, bold the words that matter}
+
+**User journeys:**
+1. **Primary.** {short when you …, you can …}
+2. {short bullets, bold on the words that matter}
+
+**What we will do:**
+- **{label}:** {key point}
+
+**What we will not do:**
+- {short bullets}
+
+Keep this banner short: bullets, bold, key points, not a dump. Same four parts. Same journeys.
+
+════════════════════════════════════════════════════════════════
+
+Correct me if I've misread anything; otherwise confirm.
+
+════════════════════════════════════════════════════════════════
