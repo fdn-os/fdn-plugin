@@ -6,11 +6,14 @@
     "name": "Foundational",
     "url": "https://github.com/fdn-os"
   },
-  "homepage": "https://hub.foundational.builders",
+  "homepage": "https://hub.foundational-os.com",
   "mcpServers": {
     "foundational": {
       "type": "http",
-      "url": "https://hub.foundational.builders/mcp"
+      "url": "https://hub.foundational-os.com/mcp/bearer",
+      "headers": {
+        "Authorization": "Bearer ${FDN_HUB_BEARER}"
+      }
     }
   },
   "skills": [
