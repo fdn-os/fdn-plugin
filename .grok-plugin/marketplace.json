@@ -1,6 +1,6 @@
 {
   "name": "foundational",
-  "description": "Foundational builders plugin. Hub MCP at https://hub.foundational.builders/mcp.",
+  "description": "Foundational builders plugin. Hub MCP at https://hub.foundational-os.com/mcp/bearer.",
   "owner": {
     "name": "Foundational",
     "url": "https://github.com/fdn-os"
@@ -8,9 +8,14 @@
   "plugins": [
     {
       "name": "fdn",
-      "description": "Foundational builders chain. Surfaces as /fdn:<skill>. Connects Hub MCP at https://hub.foundational.builders/mcp.",
-      "source": "./",
-      "homepage": "https://hub.foundational.builders"
+      "description": "Foundational builders chain. Surfaces as /fdn:<skill>. Hub MCP at https://hub.foundational-os.com/mcp/bearer.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/fdn-os/fdn-plugin.git",
+        "ref": "main"
+      },
+      "homepage": "https://hub.foundational-os.com",
+      "category": "development"
     }
   ]
 }

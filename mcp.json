@@ -2,7 +2,10 @@
   "mcpServers": {
     "foundational": {
       "type": "streamable-http",
-      "url": "https://hub.foundational.builders/mcp"
+      "url": "https://hub.foundational-os.com/mcp/bearer",
+      "headers": {
+        "Authorization": "Bearer ${FDN_HUB_BEARER}"
+      }
     }
   }
 }
